@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: free-media-heck-yeah/free-media-heck-yeah
+  branch: main
+  app_id: $GITHUB_APP_CLIENT_ID
+  auth_scope: repo
+
+media_folder: "docs/assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "posts"
+    label: "Bài viết"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tiêu đề", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Tác giả", name: "author", widget: "string" }
+      - { label: "Ngày", name: "date", widget: "datetime" }
+      - { label: "Nội dung", name: "body", widget: "markdown" }
